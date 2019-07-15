@@ -11,10 +11,10 @@ const morgan = require('morgan');
 
 const bodyParser = require('body-parser')
 
-//to refactor code into different files
+// Refactor code into different files
 const router = require('./routes/load.js')
 
-//middleware to parse and upload files to diskstorage
+// Middleware to parse and upload files to diskstorage
 const multer = require('multer')
 
 //..............................................................//
@@ -24,7 +24,7 @@ const multer = require('multer')
 app.use(router)
 
 
-//Serving a static file
+// Serving a static file
 app.use(express.static('./public'))
 
 app.use(bodyParser.urlencoded({extended: false}))
@@ -42,7 +42,7 @@ const pool = mysql.createPool({
 })
 
 
-//function to establish a connection with mysql database
+// Function to establish a connection with mysql database
 function getConnection() {
     return pool
 }

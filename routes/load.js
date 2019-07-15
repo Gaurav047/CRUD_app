@@ -98,7 +98,7 @@ router.get('/api/v1/fileserver',(req, res) => {
     console.log(file);
     console.log("\n");
 
-    // TODO: Error code handling
+    // To be verified: Error code handling
     
     // storing the file path in fileLocation.
     var fileLocation = path.join('./uploads',file);
@@ -112,6 +112,8 @@ router.get('/api/v1/fileserver',(req, res) => {
         else if (!flag){
             console.log("Enter a Valid Value.");
             return res.sendStatus(404).json(err);
+            //error code and description in json
+            // invalid input for flag = true
         }
         else {
             console.log("File Downloaded");
